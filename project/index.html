@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница интернет-магазина</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип" class="logo-img"> 
+            </div>
+            <nav class="header-links">
+                <a href="index.html">Магазин</a>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Введите запрос" id="search-place">
+                <button id="search-button">Найти</button>
+                <div id="autocomplete-list" class="autocomplete-items"></div>
+            </div>
+            <div class="header-links">
+                <nav class="header-links">
+                    <a href="index.html" class="active">Каталог</a>
+                    <a href="cart.html">Корзина</a>
+                    <a href="personal_account.html">Личный кабинет</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Уведомления -->
+    <div class="notifications" id="notifications"></div>
+
+    <!-- Контент -->
+    <main class="main-content">
+        <div class="container main-container">
+            <!-- Сайдбар -->
+            <aside class="sidebar">
+                <h2>Фильтры</h2>
+                <form id="filters">
+                    <!-- Категория -->
+                    <div class="filter-section">
+                        <h3>Категория</h3>
+                        <label><input type="checkbox" name="category" value="appliances"> Appliance</label><br/>
+                        <label><input type="checkbox" name="category" value="electronics"> Electronic</label><br/>
+                        <label><input type="checkbox" name="category" value="food"> Food</label><br/>
+                        <label><input type="checkbox" name="category" value="fitness"> Fitness</label><br/>
+                        <label><input type="checkbox" name="category" value="hygiene"> Hygiene</label><br/>
+                        <label><input type="checkbox" name="category" value="other"> Other</label>
+                    </div>
+                    <!-- Стоимость -->
+                    <div class="filter-section">
+                        <h3>Стоимость</h3>
+                        <label>От: <input type="number" name="price_min" value="100"></label><br/>
+                        <label>До: <input type="number" name="price_max" value="100000"></label>
+                    </div>
+                    <!-- Скидка -->
+                    <div class="filter-section">
+                        <label><input type="checkbox" name="sales-only"> Товары со скидкой</label>
+                    </div>
+                    <button type="submit" class="apply-button">Применить</button>
+                </form>
+            </aside>
+
+            <!-- Каталог товаров -->
+            <section class="catalog" id="catalog">
+                <div class="catalog-header">
+                    <h2>Каталог</h2>
+                    <select id="sort-dropdown">
+                        <option value="rating_desc">По убыванию рейтинга</option>
+                        <option value="rating_asc">По возрастанию рейтинга</option>
+                        <option value="price_desc">По убыванию цены</option>
+                        <option value="price_asc">По возрастанию цены</option>
+                    </select>
+                </div>
+                <div class="products-grid" id="products-container"></div>
+                <button id="load-more" class="load-more">Загрузить ещё</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2025 Магазин. Все права защищены.</p>
+            <p>Контакты: info@example.com</p>
+        </div>
+    </footer>
+    <script src="indexScript.js"></script>
+</body>
+</html>
